@@ -2,21 +2,25 @@
 <html>
 <head>
     <title>Calculadora de préstamos para compra de coches</title>
+    <link rel="stylesheet" href="styles.css"> </head>
 </head>
 <body>
-    <h1>Calculadora prestamo coches Panamá</h1>
-    <form id="loanForm">
-        <label for="importePrestamo">Tamaño del prestamo:</label>
-        <input type="number" id="importePrestamo" name="importePrestamo" required>
-        <br>
-        <label for="interestRate">Interes (%):</label>
-        <input type="number" id="interestRate" name="interestRate" required>
-        <br>
-        <label for="term">Plazos (En años):</label>
-        <input type="number" id="term" name="term" required>
-        <br>
-        <button type="submit">Calcular</button>
-    </form>
+    <h1>Calculadora prestamo de coches Panamá</h1>
+    <div class="s-form" style="text-align: center;">
+        <form id="loanForm">
+            <label for="importePrestamo">Tamaño del prestamo:</label>
+            <input class="input" type="number" id="importePrestamo" name="importePrestamo" placeholder="10,000.00" required>
+            <br>
+            <label for="interestRate">Interes (%):</label>
+            <input class="input" type="number" id="interestRate" name="interestRate" placeholder="17" required>
+            <br>
+            <label for="plazo">Plazos (En años):</label>
+            <input class="input" type="number" id="plazo" name="plazo" placeholder="6" required>
+            <br>
+            <button class="button" type="submit">Calcular</button>
+        </form>    
+      </div>
+    
     <p id="result"></p>
 
     <script>
@@ -29,14 +33,14 @@
             const formData = new FormData(form);
             const importePrestamo = formData.get('importePrestamo');
             const interestRate = formData.get('interestRate');
-            const term = formData.get('term');
+            const plazo = formData.get('plazo');
 
             const response = await fetch('http://localhost:3000/calcular', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ importePrestamo, interestRate, term })
+                body: JSON.stringify({ importePrestamo, interestRate, plazo })
             });
 
             const data = await response.json();
