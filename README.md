@@ -104,9 +104,15 @@ chmod +x ./gradlew
 ./gradlew bootRun
 ```
 
+![API en Spring](https://github.com/tonistroke/cliente-servidor/images/master/client.png?raw=true)
+*Levantamiento del servidor*
+
+![Metodo POST al endpoint del la API usando Postman](https://github.com/tonistroke/cliente-servidor/images/master/post.png?raw=true)
+*Verificación de funcionamiento utilizando Postman*
 ##### Cliente
 Abrir **index.html** con live server (si utiliza VS Code) o cualquier navegador Web.
-
+![cliente web](./images/client.png)
+*Funcionamiento del cliente*
 # Problemas encontrados y recomendaciones
 
 ##### Problemas encontrados:
