@@ -88,13 +88,24 @@ sequenceDiagram
 
 # Implementación
 ##### Servidor
+**Instalar gradle**
+```bash
+sudo apt install gradle
+```
+
+**Dar permiso a gradlew y ejecutar para instalar dependencias**
+```bash
+chmod +x ./gradlew
+./gradlew build
+```
+
 **Iniciar servidor**
 ```bash
-javac app.java
+./gradlew bootRun
 ```
 
 ##### Cliente
-Abrir **index.html** con live server (si utilizas VS Code) o cualquier navegador Web.
+Abrir **index.html** con live server (si utiliza VS Code) o cualquier navegador Web.
 
 # Problemas encontrados y recomendaciones
 
@@ -102,6 +113,6 @@ Abrir **index.html** con live server (si utilizas VS Code) o cualquier navegador
 1. Falta de experiencia utilizando una de las herramientas nesesarias para el sistema (**Java**).
 
 ##### Recomendaciones:
-1. Si el numero de usuarios incrementa el sistema no podra ser capaz de prosesar toda lacarga, lo que nos forzaria a escalar la aplicacion de manera horizontal.
+1. Si el numero de usuarios incrementa el sistema no podra ser capaz de procesar toda la carga, lo que nos forzaria a escalar la aplicacion de manera horizontal.
 2. La interfaz de usuario se puede mejorar agregando mensajes de error, comentarios de ayuda y indicadores de carga.
 

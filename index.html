@@ -14,8 +14,8 @@
             <label for="interestRate">Interes (%):</label>
             <input class="input" type="number" id="interestRate" name="interestRate" placeholder="17" required>
             <br>
-            <label for="plazo">Plazos (En años):</label>
-            <input class="input" type="number" id="plazo" name="plazo" placeholder="6" required>
+            <label for="plazos">Plazos (En años):</label>
+            <input class="input" type="number" id="plazos" name="plazos" placeholder="6" required>
             <br>
             <button class="button" type="submit">Calcular</button>
         </form>    
@@ -33,14 +33,14 @@
             const formData = new FormData(form);
             const importePrestamo = formData.get('importePrestamo');
             const interestRate = formData.get('interestRate');
-            const plazo = formData.get('plazo');
+            const plazos = formData.get('plazos');
 
-            const response = await fetch('http://localhost:3000/calcular', {
+            const response = await fetch('http://localhost:8080/api/calcular', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ importePrestamo, interestRate, plazo })
+                body: JSON.stringify({ importePrestamo, interestRate, plazos })
             });
 
             const data = await response.json();
