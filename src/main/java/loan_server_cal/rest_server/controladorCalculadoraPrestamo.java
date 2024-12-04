@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5500") // para cliente iniciado con live server puerto 5500
+@CrossOrigin(origins = "*") // para cliente iniciado con live server puerto 5500
 @RequestMapping("/api")
 public class controladorCalculadoraPrestamo {
 
